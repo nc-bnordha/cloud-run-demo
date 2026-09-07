@@ -22,9 +22,9 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
-          project_id: grand-incentive-507903-f0
-          workload_identity_provider: projects/453285865082/locations/global/workloadIdentityPools/github/providers/github
-          service_account: github-deployer@grand-incentive-507903-f0.iam.gserviceaccount.com
+          project_id: nc-foobar-01
+          workload_identity_provider: projects/790733925479/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github-deployer@nc-foobar-01.iam.gserviceaccount.com
 
       - name: Set up Google Cloud CLI
         uses: google-github-actions/setup-gcloud@v3
@@ -32,4 +32,6 @@ jobs:
       - name: Verify identity and target project
         run: |
           gcloud auth list --filter=status:ACTIVE
-          gcloud projects describe grand-incentive-507903-f0 --format='value(projectId)'
+          gcloud projects describe nc-foobar-01 --format='value(projectId)'
+
+# Trusted repository: nc-bnordha/cloud-run-demo
